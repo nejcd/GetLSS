@@ -21,6 +21,7 @@
 """
 
 import urllib
+import numpy as np
 
 def getLSS(tiles, CRS, product):
     """Download LIDAR Slovenia
@@ -31,8 +32,9 @@ def getLSS(tiles, CRS, product):
     :param product: Point Cloud (OTR), Classified Point Cloud (GKOT), Digital Elevation Model (DMR)
     :type product: string
     """
-    fileurl = urllib.URLopener()
     blocks = [11, 12, 13, 14, 15, 16, 21, 22, 23, 24, 25, 26, 31, 32, 33, 34, 35, 36, 37]
+
+    fileurl = urllib.URLopener()
 
     if product == 'OTR':
         extension = 'zlas'
